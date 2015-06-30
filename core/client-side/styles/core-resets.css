@@ -1,0 +1,223 @@
+/*!
+ * XDaRk Core Resets; copyright: © 2012 (coded in the USA)
+ * GPL license <https://github.com/websharks/core>
+ */
+/**
+ * XDaRk Core Resets
+ *
+ * Copyright: © 2012 (coded in the USA)
+ * {@link http://www.websharks-inc.com XDaRk}
+ *
+ * @author JasWSInc
+ * @package XDaRk\Core
+ * @since 120318
+ */
+
+/* Basics & Inheritance
+<https://developer.mozilla.org/en-US/docs/Web/CSS/inherit> */
+/* noinspection ALL */
+
+.xd-v141226-dev,
+.xd-v141226-dev *
+{
+	margin              : 0;
+	padding             : 0;
+	outline             : 0;
+
+	background          : none;
+	opacity             : inherit;
+	color               : inherit;
+	font-size           : inherit;
+	line-height         : inherit;
+	font-family         : inherit;
+	text-indent         : inherit;
+	direction           : inherit;
+	text-align          : inherit;
+	text-justify        : inherit;
+	text-shadow         : inherit;
+	text-outline        : inherit;
+	text-decoration     : inherit;
+	text-overflow       : inherit;
+	text-transform      : inherit;
+	font-variant        : inherit;
+	text-wrap           : inherit;
+	word-wrap           : inherit;
+	word-break          : inherit;
+	word-spacing        : inherit;
+	white-space         : inherit;
+	letter-spacing      : inherit;
+
+	clip                : auto;
+	float               : none;
+	clear               : none;
+
+	width               : auto;
+	height              : auto;
+	min-width           : 0;
+	min-height          : 0;
+	max-width           : none;
+	max-height          : none;
+	overflow            : visible;
+
+	list-style          : none;
+
+	border              : 0;
+	border-spacing      : 0;
+	box-sizing          : content-box;
+	border-collapse     : collapse;
+	table-layout        : auto;
+
+	vertical-align      : baseline;
+
+	z-index             : auto;
+	top                 : auto;
+	right               : auto;
+	bottom              : auto;
+	left                : auto;
+	position            : static;
+
+	box-shadow          : none;
+	appearance          : normal;
+	visibility          : visible;
+	backface-visibility : visible;
+}
+
+/* Parent Styles from which to Inherit */
+
+.xd-v141226-dev
+{
+	cursor          : auto;
+
+	opacity         : 1;
+	color           : #000000;
+	font-size       : 14px;
+	line-height     : 1;
+	font-family     : sans-serif;
+	text-indent     : 0;
+	direction       : ltr;
+	text-align      : left;
+	text-justify    : auto;
+	text-shadow     : none;
+	text-outline    : none;
+	text-decoration : none;
+	text-overflow   : clip;
+	text-transform  : none;
+	font-variant    : normal;
+	text-wrap       : normal;
+	word-wrap       : normal;
+	word-break      : normal;
+	white-space     : normal;
+	word-spacing    : normal;
+	letter-spacing  : normal;
+}
+
+/* Block & Inline Elements
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements> */
+
+.xd-v141226-dev address,
+.xd-v141226-dev article,
+.xd-v141226-dev aside,
+.xd-v141226-dev audio,
+.xd-v141226-dev blockquote,
+.xd-v141226-dev canvas,
+.xd-v141226-dev dd,
+.xd-v141226-dev div,
+.xd-v141226-dev dl,
+.xd-v141226-dev fieldset,
+.xd-v141226-dev figcaption,
+.xd-v141226-dev figure,
+.xd-v141226-dev footer,
+.xd-v141226-dev form,
+.xd-v141226-dev h1,
+.xd-v141226-dev h2,
+.xd-v141226-dev h3,
+.xd-v141226-dev h4,
+.xd-v141226-dev h5,
+.xd-v141226-dev h6,
+.xd-v141226-dev header,
+.xd-v141226-dev hgroup,
+.xd-v141226-dev hr,
+.xd-v141226-dev noscript,
+.xd-v141226-dev ol,
+.xd-v141226-dev output,
+.xd-v141226-dev p,
+.xd-v141226-dev pre,
+.xd-v141226-dev section,
+.xd-v141226-dev table,
+.xd-v141226-dev tfoot,
+.xd-v141226-dev ul,
+.xd-v141226-dev video
+{
+	display : block;
+}
+.xd-v141226-dev b,
+.xd-v141226-dev big,
+.xd-v141226-dev i,
+.xd-v141226-dev small,
+.xd-v141226-dev tt,
+.xd-v141226-dev abbr,
+.xd-v141226-dev acronym,
+.xd-v141226-dev cite,
+.xd-v141226-dev code,
+.xd-v141226-dev dfn,
+.xd-v141226-dev em,
+.xd-v141226-dev kbd,
+.xd-v141226-dev strong,
+.xd-v141226-dev samp,
+.xd-v141226-dev var,
+.xd-v141226-dev a,
+.xd-v141226-dev bdo,
+.xd-v141226-dev br,
+.xd-v141226-dev img,
+.xd-v141226-dev map,
+.xd-v141226-dev object,
+.xd-v141226-dev q,
+.xd-v141226-dev span,
+.xd-v141226-dev sub,
+.xd-v141226-dev sup,
+.xd-v141226-dev button,
+.xd-v141226-dev input,
+.xd-v141226-dev label,
+.xd-v141226-dev select,
+.xd-v141226-dev textarea
+{
+	display : inline;
+}
+
+/* Preformatted Tags */
+
+.xd-v141226-dev pre,
+.xd-v141226-dev select
+{
+	white-space : pre;
+}
+
+/* Monospace Tags */
+
+.xd-v141226-dev tt, code
+{
+	font-family : monospace;
+}
+
+/* Quotes */
+
+.xd-v141226-dev q,
+.xd-v141226-dev blockquote
+{
+	quotes : none;
+}
+.xd-v141226-dev q:before,
+.xd-v141226-dev q:after,
+.xd-v141226-dev blockquote:before,
+.xd-v141226-dev blockquote:after
+{
+	content : '';
+	content : none;
+}
+
+/* Images */
+
+.xd-v141226-dev img
+{
+	vertical-align : bottom;
+}

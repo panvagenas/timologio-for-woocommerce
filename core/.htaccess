@@ -1,0 +1,34 @@
+# UTF-8 charset by default please.
+# If nothing is specifically stated; assume UTF-8.
+AddDefaultCharset UTF-8
+
+# Configuration of directory indexes.
+# For added security (set these explicitly).
+Options -Indexes
+<IfModule dir_module>
+	DirectoryIndex disabled
+	DirectoryIndex index.php index.html
+</IfModule>
+
+# XDaRk Core (support for PHAR files; i.e. PHP Archives).
+# Specifically; this adds support for the XDaRk Core webPhar implementation.
+# See: http://php.net/manual/en/phar.webphar.php
+
+# We need PATH_INFO to be enabled at all times.
+# This is already enabled for PHP scripts by most web hosts.
+# See: http://httpd.apache.org/docs/2.2/mod/core.html#acceptpathinfo
+AcceptPathInfo default
+
+# Apache™ should handle this fine without any further hassle.
+# This is possible because of the MIME module that comes with Apache™ 2.x;
+# (where `.php.phar` reverts to `.php` if `.phar` is not associated with a MIME type yet).
+# So as long as the PHAR file ends with `.php.phar` (which it does); we're good here.
+# See: http://httpd.apache.org/docs/2.0/mod/mod_mime.html#multipleext
+
+# Specifically for LiteSpeed™ (we can guess this w/ some certainty).
+# This assumes LiteSpeed™ is NOT configured to handle PHAR files already.
+# We also assume the standard PHP MIME type is in use (application/x-httpd-php).
+# Could also try: application/x-httpd-php5, application/x-httpd-php53, application/x-httpd-php54
+<IfModule litespeed>
+	AddType application/x-httpd-php phar
+</IfModule>

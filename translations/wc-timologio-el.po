@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Timologio\n"
+"POT-Creation-Date: 2015-06-30 16:51+0200\n"
+"PO-Revision-Date: 2015-06-30 17:00+0200\n"
+"Last-Translator: Panagiotis Vagenas <pan.vagenas@gmail.com>\n"
+"Language-Team: pan.vagenas <pan.vagenas@gmail.com>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_x;$this->__\n"
+"X-Poedit-Basepath: /home/vagenas/Development/WordPress/public_html/magnitech/"
+"wp-content/plugins/woocommerce-timologio\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ./classes/timologio\n"
+
+#: classes/timologio/timologio.php:26
+msgid "Invoice"
+msgstr "Τιμολόγιο"
+
+#: classes/timologio/timologio.php:27
+msgid "Invoicing"
+msgstr "Έκδοση Τιμολογίου"
+
+#: classes/timologio/timologio.php:32
+msgid "No"
+msgstr "Όχι"
+
+#: classes/timologio/timologio.php:33
+msgid "Yes"
+msgstr "Ναι"
+
+#: classes/timologio/timologio.php:39
+msgid "Company Name"
+msgstr "Όνομα Εταιρείας"
+
+#: classes/timologio/timologio.php:47
+msgid "Drastiriotita"
+msgstr "Δραστηριότητα"
+
+#: classes/timologio/timologio.php:55
+msgid "VAT Number"
+msgstr "Α.Φ.Μ."
+
+#: classes/timologio/timologio.php:63
+msgid "DOY"
+msgstr "Δ.Ο.Υ."
+
+#: classes/timologio/timologio.php:81
+msgid "Please fill all invoice fields"
+msgstr ""
+"Παρακαλούμε συμπληρώστε όλα τα πεδία που αφορούν στα στοιχεία της εταιρείας "
+"για έκδοση τιμολογίου"
+
+#: classes/timologio/timologio.php:134
+msgid "Company Details"
+msgstr "Στοιχεία Εταιρείας"
