@@ -43,9 +43,9 @@ Domain Path: /translations
 Plugin Name: WooCommerce Timologio
 Plugin URI: https://github.com/panvagenas/woocommerce-timologio
 
-Description: todo
+Description: Add invoice functionality to checkout per Greek standards
 
-Tags: todo
+Tags: invoice, woocommerce, checkout, checkout fields
 
 Kudos: WebSharks™ http://www.websharks-inc.com
 
