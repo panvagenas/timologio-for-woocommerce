@@ -1,0 +1,44 @@
+{
+    "name": "panvagenas/woocommerce-timologio",
+    "type": "wordpress-plugin",
+    "description": "Add invoice functionality to checkout per Greek standards",
+    "license": "GPL-3.0+",
+    "keywords": [
+        "invoice",
+        "woocommerce",
+        "checkout",
+        "checkout fields"
+    ],
+    "authors": [
+        {
+            "name": "Panagiotis Vagenas",
+            "email": "pan.vagenas@gmail.com",
+            "homepage": "https://gr.linkedin.com/in/panvagenas",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {},
+    "config": {
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Pan\\": "src/"
+        },
+        "files": []
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    },
+    "archive": {
+        "exclude": [
+            "/docs",
+            "/tests"
+        ]
+    }
+}

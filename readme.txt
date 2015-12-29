@@ -3,7 +3,7 @@ Contributors: pan.vagenas
 Tags: invoice, woocommerce, checkout, checkout fields
 Requires at least: 3.5.1
 Tested up to: 4.2.2
-Stable tag: 150630
+Stable tag: 151229
 License: GNU General Public License V3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -34,6 +34,6 @@ Please consult WordPress plugin [installation guide](https://codex.wordpress.org
 
 == Changelog ==
 
-#### 150630
+#### 151229
 
 * Initial release
