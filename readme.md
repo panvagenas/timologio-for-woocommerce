@@ -39,6 +39,11 @@ along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.
 
 ## Changelog
 
+#### 160127
+
+* Fix translation
+* Cleaning up some code
+
 #### 151229
 
 * Initial release
