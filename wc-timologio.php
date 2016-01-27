@@ -45,7 +45,7 @@ Plugin URI: https://github.com/panvagenas/woocommerce-timologio
 
 Description: Add invoice functionality to checkout per Greek standards
 
-Tags: invoice, woocommerce, checkout, checkout fields
+Tags: woocommerce, checkout, checkout fields, timologio, τιμολόγιο
 
 -- end section for WordPress®. -------------------------------------------------------------------------------------- */
 

@@ -1,6 +1,6 @@
 === WooCommerce Timologio ===
 Contributors: pan.vagenas
-Tags: invoice, woocommerce, checkout, checkout fields
+Tags: invoice, woocommerce, checkout, checkout fields, timologio, τιμολόγιο
 Requires at least: 3.5.1
 Tested up to: 4.2.2
 Stable tag: 160127
