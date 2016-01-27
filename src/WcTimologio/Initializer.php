@@ -37,6 +37,6 @@ class Initializer {
 
         add_filter( 'woocommerce_email_order_meta_fields', array( $timologio, 'emailOrderMetaKeys' ), 100, 3 );
 
-        load_plugin_textdomain( 'wc-timologio' );
+        load_plugin_textdomain( 'wc-timologio', false, trailingslashit(dirname(plugin_basename($this->pluginFile))) . 'translations' );
     }
 }
