@@ -39,9 +39,13 @@ along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.
 
 ## Changelog
 
+#### 160128
+
+* Fix: Bug in checkout
+
 #### 160127
 
-* Fix translation
+* Fix: translation
 * Cleaning up some code
 
 #### 151229
