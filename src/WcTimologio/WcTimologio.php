@@ -86,7 +86,7 @@ class WcTimologio {
      * @since  151229
      */
     public function checkoutProcess() {
-        if ( isset( $_POST['timologio'] ) ) {
+        if ( isset( $_POST['timologio'] ) && $_POST['timologio'] == 1 ) {
             $valid = $this->validateInvoicePostFields();
 
             if ( ! $valid ) {
