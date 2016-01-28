@@ -19,9 +19,9 @@ class WcTimologio {
     public function __construct() {
         $this->fieldsNames = array(
             'timologio_company_name' => __( 'Company Name', 'wc-timologio' ),
-            'timologio_field'        => __( 'Drastiriotita', 'wc-timologio' ),
+            'timologio_field'        => __( 'Company Activity', 'wc-timologio' ),
             'timologio_vat_number'   => __( 'VAT Number', 'wc-timologio' ),
-            'timologio_doy'          => __( 'DOY', 'wc-timologio' ),
+            'timologio_doy'          => __( 'Public Financial Office', 'wc-timologio' ),
         );
     }
 
@@ -33,6 +33,8 @@ class WcTimologio {
      * @since  151229
      */
     public function checkoutFields( $fields ) {
+        unset($fields['billing']['billing_company']);
+
         $fields['billing']['timologio'] = array(
             'type'        => 'select',
             'label'       => __( 'Invoice', 'wc-timologio' ),
@@ -56,7 +58,7 @@ class WcTimologio {
 
         $fields['billing']['timologio_field'] = array(
             'type'     => 'text',
-            'label'    => __( 'Drastiriotita', 'wc-timologio' ),
+            'label'    => __( 'Company Activity', 'wc-timologio' ),
             'required' => false,
             'class'    => array( 'form-row-wide', 'timologio-hide' ),
             'clear'    => true,
@@ -72,7 +74,7 @@ class WcTimologio {
 
         $fields['billing']['timologio_doy'] = array(
             'type'     => 'text',
-            'label'    => __( 'DOY', 'wc-timologio' ),
+            'label'    => __( 'Public Financial Office', 'wc-timologio' ),
             'required' => false,
             'class'    => array( 'form-row-wide', 'timologio-hide' ),
             'clear'    => true,

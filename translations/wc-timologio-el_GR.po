@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Timologio\n"
-"POT-Creation-Date: 2015-06-30 16:51+0200\n"
-"PO-Revision-Date: 2016-01-27 23:15+0200\n"
+"POT-Creation-Date: 2016-01-28 09:48+0200\n"
+"PO-Revision-Date: 2016-01-28 09:49+0200\n"
 "Last-Translator: Panagiotis Vagenas <pan.vagenas@gmail.com>\n"
 "Language-Team: pan.vagenas <pan.vagenas@gmail.com>\n"
 "Language: el_GR\n"
@@ -11,49 +11,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_x;$this->__\n"
-"X-Poedit-Basepath: /home/vagenas/Development/WordPress/public_html/magnitech/"
-"wp-content/plugins/woocommerce-timologio\n"
+"X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ./classes/timologio\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: classes/timologio/timologio.php:26
-msgid "Invoice"
-msgstr "Τιμολόγιο"
-
-#: classes/timologio/timologio.php:27
-msgid "Invoicing"
-msgstr "Έκδοση Τιμολογίου"
-
-#: classes/timologio/timologio.php:32
-msgid "No"
-msgstr "Όχι"
-
-#: classes/timologio/timologio.php:33
-msgid "Yes"
-msgstr "Ναι"
-
-#: classes/timologio/timologio.php:39
+#: src/WcTimologio/WcTimologio.php:21 src/WcTimologio/WcTimologio.php:53
 msgid "Company Name"
 msgstr "Όνομα Εταιρείας"
 
-#: classes/timologio/timologio.php:47
-msgid "Drastiriotita"
+#: src/WcTimologio/WcTimologio.php:22 src/WcTimologio/WcTimologio.php:61
+msgid "Company Activity"
 msgstr "Δραστηριότητα"
 
-#: classes/timologio/timologio.php:55
+#: src/WcTimologio/WcTimologio.php:23 src/WcTimologio/WcTimologio.php:69
 msgid "VAT Number"
 msgstr "Α.Φ.Μ."
 
-#: classes/timologio/timologio.php:63
-msgid "DOY"
+#: src/WcTimologio/WcTimologio.php:24 src/WcTimologio/WcTimologio.php:77
+msgid "Public Financial Office"
 msgstr "Δ.Ο.Υ."
 
-#: classes/timologio/timologio.php:81
+#: src/WcTimologio/WcTimologio.php:40
+msgid "Invoice"
+msgstr "Τιμολόγιο"
+
+#: src/WcTimologio/WcTimologio.php:41
+msgid "Invoicing"
+msgstr "Έκδοση Τιμολογίου"
+
+#: src/WcTimologio/WcTimologio.php:46
+msgid "No"
+msgstr "Όχι"
+
+#: src/WcTimologio/WcTimologio.php:47
+msgid "Yes"
+msgstr "Ναι"
+
+#: src/WcTimologio/WcTimologio.php:95
 msgid "Please fill all invoice fields"
 msgstr ""
 "Παρακαλούμε συμπληρώστε όλα τα πεδία που αφορούν στα στοιχεία της εταιρείας "
 "για έκδοση τιμολογίου"
 
-#: classes/timologio/timologio.php:134
+#: src/WcTimologio/WcTimologio.php:157
 msgid "Company Details"
 msgstr "Στοιχεία Εταιρείας"
+
+#~ msgid "Drastiriotita"
+#~ msgstr "Δραστηριότητα"
+
+#~ msgid "DOY"
+#~ msgstr "Δ.Ο.Υ."
