@@ -1,14 +1,9 @@
 {
-    "name": "panvagenas/woocommerce-timologio",
+    "name": "panvagenas/timologio-for-woocommerce",
     "type": "wordpress-plugin",
     "description": "Add invoice functionality to checkout per Greek standards",
     "license": "GPL-3.0+",
-    "keywords": [
-        "invoice",
-        "woocommerce",
-        "checkout",
-        "checkout fields"
-    ],
+    "keywords": [ "invoice", "woocommerce", "checkout", "checkout fields", "timologio", "τιμολόγιο" ],
     "authors": [
         {
             "name": "Panagiotis Vagenas",

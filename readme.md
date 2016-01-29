@@ -1,4 +1,4 @@
-# WooCommerce Timologio
+# Timologio for WooCommerce
 
 ## Description
 
@@ -38,6 +38,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
 
 ## Changelog
+
+#### 160129
+
+* Changed plugin name to avoid some legal conflicts
 
 #### 160128
 

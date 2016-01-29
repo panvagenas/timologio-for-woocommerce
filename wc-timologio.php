@@ -19,8 +19,8 @@
 
 /* -- WordPress® -------------------------------------------------------------------------------------------------------
 
-Version: 160128
-Stable tag: 160128
+Version: 160129
+Stable tag: 160129
 Tested up to: 4.4.1
 Requires at least: 4.0
 
@@ -40,12 +40,12 @@ Author URI: http://gr.linkedin.com/in/panvagenas
 Text Domain: wc-timologio
 Domain Path: /translations
 
-Plugin Name: WooCommerce Timologio
-Plugin URI: https://github.com/panvagenas/woocommerce-timologio
+Plugin Name: Timologio for WooCommerce
+Plugin URI: https://github.com/panvagenas/timologio-for-woocommerce
 
 Description: Add invoice functionality to checkout per Greek standards
 
-Tags: woocommerce, checkout, checkout fields, timologio, τιμολόγιο
+Tags: invoice, woocommerce, checkout, checkout fields, timologio, τιμολόγιο
 
 -- end section for WordPress®. -------------------------------------------------------------------------------------- */
 
