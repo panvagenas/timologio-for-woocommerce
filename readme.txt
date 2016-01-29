@@ -34,6 +34,10 @@ Please consult WordPress plugin [installation guide](https://codex.wordpress.org
 
 == Changelog ==
 
+#### 160130
+
+* Enhancement: Add icon in admin order listing when timologio is selected
+
 #### 160129
 
 * Changed plugin name to avoid some legal conflicts

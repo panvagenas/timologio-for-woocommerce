@@ -39,6 +39,10 @@ along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.
 
 ## Changelog
 
+#### 160130
+
+* Enhancement: Add icon in admin order listing when timologio is selected
+
 #### 160129
 
 * Changed plugin name to avoid some legal conflicts
