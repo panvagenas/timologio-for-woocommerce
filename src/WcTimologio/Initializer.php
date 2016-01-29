@@ -20,6 +20,8 @@ class Initializer {
         add_action( 'woocommerce_checkout_process', array( $timologio, 'checkoutProcess' ) );
         add_action( 'woocommerce_checkout_update_order_meta', array( $timologio, 'updateOrderMeta' ) );
 
+        add_action( 'manage_shop_order_posts_custom_column', array( $timologio, 'timologioIconToOrderNotesCol' ), 2 );
+
         $scriptUrl = plugins_url( 'assets/js/checkout.min.js', $this->pluginFile );
         add_action('wp_enqueue_scripts', function() use ($scriptUrl){
             if(is_cart() || is_checkout()){
@@ -37,6 +39,11 @@ class Initializer {
 
         add_filter( 'woocommerce_email_order_meta_fields', array( $timologio, 'emailOrderMetaKeys' ), 100, 3 );
 
-        load_plugin_textdomain( 'wc-timologio', false, trailingslashit(dirname(plugin_basename($this->pluginFile))) . 'translations' );
+        load_plugin_textdomain(
+            'wc-timologio'
+            ,
+            false,
+            trailingslashit(dirname(plugin_basename($this->pluginFile))) . 'translations'
+        );
     }
 }

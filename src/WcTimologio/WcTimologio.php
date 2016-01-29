@@ -7,6 +7,9 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 class WcTimologio {
+    const TIMOLOGIO_META_KEY = 'wc_timologio';
+    const TIMOLOGIO_META_VALUE = 1;
+
     protected $fields = array(
         'timologio_company_name',
         'timologio_field',
@@ -134,6 +137,7 @@ class WcTimologio {
                 foreach ( $data as $k => $v ) {
                     update_post_meta( $orderId, $k, $v );
                 }
+                update_post_meta($orderId, self::TIMOLOGIO_META_KEY, self::TIMOLOGIO_META_VALUE);
             }
         }
     }
@@ -189,5 +193,16 @@ class WcTimologio {
         }
 
         return $fields;
+    }
+
+    public function timologioIconToOrderNotesCol($column){
+        if($column == 'order_notes'){
+            global $post;
+
+            $timologio = get_post_meta($post->ID, WcTimologio::TIMOLOGIO_META_KEY, true);
+            if($timologio && $timologio == WcTimologio::TIMOLOGIO_META_VALUE){
+                echo '<span class="dashicons dashicons-format-aside" style="margin-top:5px;"></span>';
+            }
+        }
     }
 }
