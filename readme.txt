@@ -3,7 +3,7 @@ Contributors: pan.vagenas
 Tags: invoice, woocommerce, checkout, checkout fields, timologio, τιμολόγιο
 Requires at least: 3.5.1
 Tested up to: 4.2.2
-Stable tag: 160129
+Stable tag: 160130
 License: GNU General Public License V3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -37,6 +37,7 @@ Please consult WordPress plugin [installation guide](https://codex.wordpress.org
 #### 160130
 
 * Enhancement: Add icon in admin order listing when timologio is selected
+* Fix: Use WooCommerce meta names
 
 #### 160129
 

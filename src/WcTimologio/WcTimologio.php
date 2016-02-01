@@ -7,24 +7,36 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 class WcTimologio {
-    const TIMOLOGIO_META_KEY = 'wc_timologio';
-    const TIMOLOGIO_META_VALUE = 1;
+    const META_TIMOLOGIO = 'billing_timologio';
+
+    const META_TIMOLOGIO_Y = 'Y';
+
+    const META_TIMOLOGIO_N = 'N';
+
+    const META_COMPANY = 'billing_company';
+
+    const META_ACTIVITY = 'billing_activity';
+
+    const META_VAT = 'billing_vat';
+
+    const META_DOY = 'billing_doy';
 
     protected $fields = array(
-        'timologio_company_name',
-        'timologio_field',
-        'timologio_vat_number',
-        'timologio_doy',
+        self::META_TIMOLOGIO,
+        self::META_COMPANY,
+        self::META_ACTIVITY,
+        self::META_VAT,
+        self::META_DOY,
     );
 
     protected $fieldsNames = array();
 
     public function __construct() {
         $this->fieldsNames = array(
-            'timologio_company_name' => __( 'Company Name', 'wc-timologio' ),
-            'timologio_field'        => __( 'Company Activity', 'wc-timologio' ),
-            'timologio_vat_number'   => __( 'VAT Number', 'wc-timologio' ),
-            'timologio_doy'          => __( 'Public Financial Office', 'wc-timologio' ),
+            self::META_COMPANY  => __( 'Company Name', 'wc-timologio' ),
+            self::META_ACTIVITY => __( 'Company Activity', 'wc-timologio' ),
+            self::META_VAT      => __( 'VAT Number', 'wc-timologio' ),
+            self::META_DOY      => __( 'Public Financial Office', 'wc-timologio' ),
         );
     }
 
@@ -36,9 +48,9 @@ class WcTimologio {
      * @since  151229
      */
     public function checkoutFields( $fields ) {
-        unset($fields['billing']['billing_company']);
+        unset( $fields['billing']['billing_company'] );
 
-        $fields['billing']['timologio'] = array(
+        $fields['billing'][ self::META_TIMOLOGIO ] = array(
             'type'        => 'select',
             'label'       => __( 'Invoice', 'wc-timologio' ),
             'placeholder' => _x( 'Invoicing', 'placeholder', 'wc-timologio' ),
@@ -46,12 +58,12 @@ class WcTimologio {
             'class'       => array( 'form-row-wide', 'timologio-select' ),
             'clear'       => true,
             'options'     => array(
-                __( 'No', 'wc-timologio' ),
-                __( 'Yes', 'wc-timologio' ),
+                self::META_TIMOLOGIO_N => __( 'No', 'wc-timologio' ),
+                self::META_TIMOLOGIO_Y => __( 'Yes', 'wc-timologio' ),
             ),
         );
 
-        $fields['billing']['timologio_company_name'] = array(
+        $fields['billing'][ self::META_COMPANY ] = array(
             'type'     => 'text',
             'label'    => __( 'Company Name', 'wc-timologio' ),
             'required' => false,
@@ -59,7 +71,7 @@ class WcTimologio {
             'clear'    => true,
         );
 
-        $fields['billing']['timologio_field'] = array(
+        $fields['billing'][ self::META_ACTIVITY ] = array(
             'type'     => 'text',
             'label'    => __( 'Company Activity', 'wc-timologio' ),
             'required' => false,
@@ -67,7 +79,7 @@ class WcTimologio {
             'clear'    => true,
         );
 
-        $fields['billing']['timologio_vat_number'] = array(
+        $fields['billing'][ self::META_VAT ] = array(
             'type'     => 'text',
             'label'    => __( 'VAT Number', 'wc-timologio' ),
             'required' => false,
@@ -75,7 +87,7 @@ class WcTimologio {
             'clear'    => true,
         );
 
-        $fields['billing']['timologio_doy'] = array(
+        $fields['billing'][ self::META_DOY ] = array(
             'type'     => 'text',
             'label'    => __( 'Public Financial Office', 'wc-timologio' ),
             'required' => false,
@@ -91,13 +103,22 @@ class WcTimologio {
      * @since  151229
      */
     public function checkoutProcess() {
-        if ( isset( $_POST['timologio'] ) && $_POST['timologio'] == 1 ) {
+        if ( $this->isTimologioRequest() ) {
             $valid = $this->validateInvoicePostFields();
 
-            if ( ! $valid ) {
+            if ( count( $valid ) < count( $this->fields ) ) {
                 wc_add_notice( __( 'Please fill all invoice fields', 'wc-timologio' ), 'error' );
             }
         }
+    }
+
+
+    /**
+     * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
+     * @since  160130
+     */
+    protected function isTimologioRequest() {
+        return isset( $_POST[ self::META_TIMOLOGIO ] ) && $_POST[ self::META_TIMOLOGIO ] == self::META_TIMOLOGIO_Y;
     }
 
     /**
@@ -106,40 +127,22 @@ class WcTimologio {
      * @since  151229
      */
     protected function validateInvoicePostFields() {
-        $timologio_company_name = (string) $_POST['timologio_company_name'];
-        $timologio_field        = (string) $_POST['timologio_field'];
-        $timologio_vat_number   = (string) $_POST['timologio_vat_number'];
-        $timologio_doy          = (string) $_POST['timologio_doy'];
-
-        $data = compact( 'timologio_company_name', 'timologio_field', 'timologio_vat_number', 'timologio_doy' );
-
-        $valid = true;
-        foreach ( $data as &$value ) {
-            $value = strip_tags( $value );
-            $value = trim( $value );
-            $valid &= ! empty( $value );
+        if ( ! $this->isTimologioRequest() ) {
+            return array();
         }
 
-        return $valid ? $data : array();
-    }
-
-    /**
-     * @param $orderId
-     *
-     * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
-     * @since  151229
-     */
-    public function updateOrderMeta( $orderId ) {
-        if ( isset( $_POST['timologio'] ) ) {
-            $data = $this->validateInvoicePostFields();
-
-            if ( $data ) {
-                foreach ( $data as $k => $v ) {
-                    update_post_meta( $orderId, $k, $v );
-                }
-                update_post_meta($orderId, self::TIMOLOGIO_META_KEY, self::TIMOLOGIO_META_VALUE);
+        $validated = array();
+        ini_set( 'display_errors', E_ALL );
+        foreach ( $this->fields as $fieldName ) {
+            $value = isset( $_POST[ $fieldName ] )
+                ? wp_strip_all_tags( wp_check_invalid_utf8( stripslashes( $_POST[ $fieldName ] ) ) )
+                : '';
+            if ( ! empty( $value ) ) {
+                $validated[ $fieldName ] = $value;
             }
         }
+
+        return $validated;
     }
 
     /**
@@ -149,18 +152,24 @@ class WcTimologio {
      * @since  151229
      */
     public function adminOrderDataAfterBillingAddress( $order ) {
+        if ( $this->getOrderMeta( $order->id, self::META_TIMOLOGIO ) != self::META_TIMOLOGIO_Y ) {
+            return;
+        }
+
         $data = array();
 
         foreach ( $this->fields as $fieldName ) {
-            if ( $metaValue = get_post_meta( $order->id, $fieldName, true ) ) {
+            if ( $metaValue = $this->getOrderMeta( $order->id, $fieldName ) ) {
                 $data[ $fieldName ] = $metaValue;
             }
         }
 
+        unset( $data[ self::META_TIMOLOGIO ] );
+
         if ( $data ) {
             echo '<p><strong>' . __( 'Company Details', 'wc-timologio' ) . ':</strong></br>';
             foreach ( $data as $fieldKey => $fieldValue ) {
-                echo $fieldValue . '</br>';
+                echo $this->fieldsNames[ $fieldKey ] . ': ' . $fieldValue . '</br>';
             }
         }
     }
@@ -175,12 +184,18 @@ class WcTimologio {
      * @since  151229
      */
     public function emailOrderMetaKeys( $fields, $sent_to_admin, $order ) {
+        if ( $this->getOrderMeta( $order->id, self::META_TIMOLOGIO ) != self::META_TIMOLOGIO_Y ) {
+            return $fields;
+        }
+
         $data = array();
         foreach ( $this->fields as $fieldName ) {
-            if ( $metaValue = get_post_meta( $order->id, $fieldName, true ) ) {
+            if ( $metaValue = $this->getOrderMeta( $order->id, $fieldName ) ) {
                 $data[ $fieldName ] = $metaValue;
             }
         }
+
+        unset( $data[ self::META_TIMOLOGIO ] );
 
         if ( $data ) {
             foreach ( $data as $k => $v ) {
@@ -189,20 +204,27 @@ class WcTimologio {
                     'value' => $v,
                 );
             }
-
         }
 
         return $fields;
     }
 
-    public function timologioIconToOrderNotesCol($column){
-        if($column == 'order_notes'){
+    public function timologioIconToOrderNotesCol( $column ) {
+        if ( $column == 'order_notes' ) {
             global $post;
 
-            $timologio = get_post_meta($post->ID, WcTimologio::TIMOLOGIO_META_KEY, true);
-            if($timologio && $timologio == WcTimologio::TIMOLOGIO_META_VALUE){
+            $timologio = $this->getOrderMeta( $post->ID, self::META_TIMOLOGIO );
+
+            if ( $timologio && $timologio === WcTimologio::META_TIMOLOGIO_Y ) {
                 echo '<span class="dashicons dashicons-format-aside" style="margin-top:5px;"></span>';
             }
         }
+    }
+
+    protected function getOrderMeta( $orderId, $fieldName, $type = 'billing' ) {
+        $fieldName = str_replace( array( 'billing_', 'shipping_', '_billing_', '_shipping_' ), '', $fieldName );
+        $type      = $type == 'billing' ? '_billing_' : '_shipping_';
+
+        return get_post_meta( $orderId, $type . $fieldName, true );
     }
 }

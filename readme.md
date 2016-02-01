@@ -42,6 +42,7 @@ along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.
 #### 160130
 
 * Enhancement: Add icon in admin order listing when timologio is selected
+* Fix: Use WooCommerce meta names
 
 #### 160129
 
