@@ -132,7 +132,6 @@ class WcTimologio {
         }
 
         $validated = array();
-        ini_set( 'display_errors', E_ALL );
         foreach ( $this->fields as $fieldName ) {
             $value = isset( $_POST[ $fieldName ] )
                 ? wp_strip_all_tags( wp_check_invalid_utf8( stripslashes( $_POST[ $fieldName ] ) ) )
@@ -169,7 +168,7 @@ class WcTimologio {
         if ( $data ) {
             echo '<p><strong>' . __( 'Company Details', 'wc-timologio' ) . ':</strong></br>';
             foreach ( $data as $fieldKey => $fieldValue ) {
-                echo $this->fieldsNames[ $fieldKey ] . ': ' . $fieldValue . '</br>';
+                echo esc_html($this->fieldsNames[ $fieldKey ]) . ': ' . esc_html($fieldValue) . '</br>';
             }
         }
     }
