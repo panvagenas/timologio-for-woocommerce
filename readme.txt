@@ -1,9 +1,9 @@
 === Timologio for WooCommerce ===
 Contributors: pan.vagenas
 Tags: invoice, woocommerce, checkout, checkout fields, timologio, τιμολόγιο
-Requires at least: 3.5.1
-Tested up to: 4.2.2
-Stable tag: 160130
+Requires at least: 4.0
+Tested up to: 4.6.1
+Stable tag: 161122
 License: GNU General Public License V3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -33,6 +33,10 @@ Please consult WordPress plugin [installation guide](https://codex.wordpress.org
 
 
 == Changelog ==
+
+#### 161122
+
+* Fix: Translations are now properly pulled
 
 #### 160130
 

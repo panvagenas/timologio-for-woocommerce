@@ -39,6 +39,10 @@ along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.
 
 ## Changelog
 
+#### 161122
+
+* Fix: Translations are now properly pulled
+
 #### 160130
 
 * Enhancement: Add icon in admin order listing when timologio is selected
