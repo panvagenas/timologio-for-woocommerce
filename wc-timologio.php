@@ -58,3 +58,4 @@ require_once 'vendor/autoload.php';
 $init = new \Pan\WcTimologio\Initializer( __FILE__ );
 
 add_action('wp_loaded', array($init, 'wpLoaded'));
+add_action('plugins_loaded', array($init, 'pluginsLoaded'));
